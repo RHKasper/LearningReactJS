@@ -1,7 +1,7 @@
 "use strict";
 
 const sequenceLength = 40;
-let output = "Fibonacci sequence from 0 to " + sequenceLength + ":<br>";
+let output = "Fibonacci sequence from 0 to " + sequenceLength + " with simple recursion:<br>";
 
 let start = Date.now();
 
