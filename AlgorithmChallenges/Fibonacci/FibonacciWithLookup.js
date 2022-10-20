@@ -1,6 +1,6 @@
 "use strict";
-const sequenceLength = 4000;
-let CachedFibValues = new Array();
+const sequenceLength = 40;
+let CachedFibValues = new Map();
 
 Main();
 
@@ -29,8 +29,11 @@ function displayResults(output, duration)
 
 function fib (index)
 {
-    if(CachedFibValues.length > index)
+    if(CachedFibValues.has(index))
+    {
+        output("Getting value for index " + index + " from table");
         return CachedFibValues[index];
+    }
     else
     {
         let result;
