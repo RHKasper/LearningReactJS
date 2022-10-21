@@ -1,5 +1,5 @@
 "use strict";
-const sequenceLength = 40;
+const sequenceLength = 400;
 let CachedFibValues = new Map();
 
 Main();
@@ -12,6 +12,7 @@ function Main()
     
     for(let i = 1; i <= sequenceLength; i++)
     {
+        console.log("Calculating fibonacci value " + i);
         output += fib(i);
         if(i != sequenceLength)
             output += ", ";
@@ -31,8 +32,8 @@ function fib (index)
 {
     if(CachedFibValues.has(index))
     {
-        output("Getting value for index " + index + " from table");
-        return CachedFibValues[index];
+        console.log("Getting value for index " + index + " from table: ");
+        return CachedFibValues.get(index);
     }
     else
     {
@@ -43,7 +44,7 @@ function fib (index)
         else
             result = fib(index-1) + fib(index-2);
 
-        CachedFibValues[index] = result;
+        CachedFibValues.set(index, result);
         return result;
     }
 }
